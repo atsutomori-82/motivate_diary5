@@ -1,0 +1,2 @@
+class WorkVolume < ApplicationRecord
+end
