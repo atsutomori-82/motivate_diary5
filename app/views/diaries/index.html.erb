@@ -1,0 +1,10 @@
+<div class="contents row">
+  <% @diaries.each do |diary| %>
+    <div class="content_post" style="background-image: url(<%= diary.image %>);">
+      <p><%= diary.text %></p>
+      <span class="name">
+        <%= diary.day_num %>
+      </span>
+    </div>
+  <% end %>
+</div>

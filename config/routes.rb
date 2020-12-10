@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  resources :diary, only: :index
+  root to: 'diaries#index'
+  
+  resources :diaries, only: [:index, :new]
+
 end
