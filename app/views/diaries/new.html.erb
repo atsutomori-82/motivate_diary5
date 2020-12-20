@@ -1,14 +1,13 @@
 <div class="contents row">
   <div class="container">
-    <h3>投稿する</h3>
-    <%= form_with(model: @diary, local: true) do |f| %>
+    <h3>日記を書く</h3>
+    <%= form_with model: @diary, url:new_diary_path, local: true do |f| %>
       <%= f.text_field :day_num, placeholder: "○月○日" %>　
-      <%= f.text_area :diary, placeholder: "今日の出来事" %>
-      <%= f.text_area :text, placeholder: "text", rows: "7" %>
-      <%#= f.collection_select(:condition, Condition.all, :id, :name, {}, {class:"", id:"diary-condition"}) %>
-      <%#= f.collection_select(:motivation, Motivation.all, :id, :name, {}, {class:"", id:"diary-motivation"}) %>
-      <%#= f.collection_select(:work_volume, WorkVolume.all, :id, :name, {}, {class:"", id:"diary-work_volume"}) %>
-      <%= f.submit "SEND" %>
+      <%= f.text_area :diary, placeholder: "今日の出来事", rows: "7" %>
+      <%= f.collection_select(:condition, Condition.all, :id, :name, {}, {class:"items-text", id:"diary-condition"}) %>
+      <%= f.collection_select(:motivation, Motivation.all, :id, :name, {}, {class:"items-text", id:"diary-motivation"}) %>
+      <%#= f.collection_select(:work_volume, WorkVolume.all, :id, :name, {}, {class:"items-text", id:"diary-work_volume"}) %>
+      <%= f.submit "日記を保存する" %>
     <% end %>
   </div>
 </div>
